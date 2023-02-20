@@ -17,7 +17,9 @@ class Dashboard extends StatelessWidget {
               margin: const EdgeInsets.all(10),
               decoration: const BoxDecoration(
                 color: Color.fromARGB(255, 78, 80, 63),
-                borderRadius: BorderRadius.all(Radius.circular(15)),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(15),
+                ),
               ),
               child: AddTodo(),
             ),
@@ -28,7 +30,9 @@ class Dashboard extends StatelessWidget {
               margin: const EdgeInsets.all(10),
               decoration: const BoxDecoration(
                 color: Color.fromARGB(255, 78, 80, 63),
-                borderRadius: BorderRadius.all(Radius.circular(15)),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(15),
+                ),
               ),
               child: const TodoList(),
             ),

@@ -1,5 +1,3 @@
-import 'package:flutter/cupertino.dart';
-
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import '/models/todoItem.dart';
@@ -16,7 +14,7 @@ class _AddTodoScreenState extends State<AddTodo> {
 
   var _todo = TodoItem(
     id: '',
-    title: 'ZXzX',
+    title: '',
   );
 
   Future<void> _addTodo() async {
@@ -33,36 +31,38 @@ class _AddTodoScreenState extends State<AddTodo> {
     final todo = Provider.of<Todo>(context, listen: false);
 
     return Container(
-        child: Form(
-            key: _form,
-            child: ListView(
-              children: [
-                TextFormField(
-                  initialValue: '',
-                  decoration: const InputDecoration(
-                    hintText: 'Title',
-                  ),
-                  validator: (value) {
-                    if (value!.isEmpty) {
-                      return 'Please provide a value.';
-                    }
-                    return null;
-                  },
-                  onSaved: (value) {
-                    _todo = TodoItem(
-                      id: _todo.id,
-                      title: value!,
-                    );
-                  },
-                ),
-                Container(
-                  margin: const EdgeInsets.all(10.0),
-                  child: OutlinedButton(
-                    onPressed: _addTodo,
-                    child: const Text('Add'),
-                  ),
-                )
-              ],
-            )));
+      child: Form(
+        key: _form,
+        child: ListView(
+          children: [
+            TextFormField(
+              initialValue: '',
+              decoration: const InputDecoration(
+                hintText: 'Title',
+              ),
+              validator: (value) {
+                if (value!.isEmpty) {
+                  return 'Please provide a value.';
+                }
+                return null;
+              },
+              onSaved: (value) {
+                _todo = TodoItem(
+                  id: _todo.id,
+                  title: value!,
+                );
+              },
+            ),
+            Container(
+              margin: const EdgeInsets.all(10.0),
+              child: OutlinedButton(
+                onPressed: _addTodo,
+                child: const Text('Add'),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }

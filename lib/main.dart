@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import '/screens/dashboard.dart';
+import 'package:flutter_todo_app/screens/app.dart';
+import 'package:flutter_todo_app/screens/appreciations.dart';
+import 'package:flutter_todo_app/screens/tasks.dart';
 import './providers/todo.dart';
 import 'package:provider/provider.dart';
 
@@ -25,22 +27,19 @@ class MyApp extends StatelessWidget {
           // UI
           brightness: Brightness.dark,
           primaryColor: Colors.lightBlue[800],
-
-          // font
           fontFamily: 'Georgia',
           //text style
-          textTheme: TextTheme(
+          textTheme: const TextTheme(
             headline1: TextStyle(fontSize: 72.0, fontWeight: FontWeight.bold),
             headline6: TextStyle(fontSize: 36.0, fontStyle: FontStyle.italic),
             bodyText2: TextStyle(fontSize: 14.0, fontFamily: 'Hind'),
           ),
         ),
-        home: Scaffold(
-          appBar: AppBar(
-            title: const Text('Todo'),
-          ),
-          body: Dashboard(),
-        ),
+        home: const App(),
+        routes: {
+          Tasks.routeName: (ctx) => const Tasks(),
+          Appreciations.routeName: (ctx) => const Appreciations()
+        },
       ),
     );
   }
