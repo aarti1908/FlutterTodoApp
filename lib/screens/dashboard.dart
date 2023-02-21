@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_todo_app/widgets/timer.dart';
 import '/widgets/todo_list.dart';
 import '../widgets/addTodo.dart';
 
@@ -16,7 +17,6 @@ class Dashboard extends StatelessWidget {
               padding: const EdgeInsets.all(20),
               margin: const EdgeInsets.all(10),
               decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 78, 80, 63),
                 borderRadius: BorderRadius.all(
                   Radius.circular(15),
                 ),
@@ -29,7 +29,6 @@ class Dashboard extends StatelessWidget {
               padding: const EdgeInsets.all(20),
               margin: const EdgeInsets.all(10),
               decoration: const BoxDecoration(
-                color: Color.fromARGB(255, 78, 80, 63),
                 borderRadius: BorderRadius.all(
                   Radius.circular(15),
                 ),

@@ -26,7 +26,7 @@ class _AppState extends State<App> {
         return const Appreciations();
         break;
       case 3:
-        return const Timer();
+        return const Time();
         break;
       default:
     }

@@ -1,10 +1,6 @@
 import 'package:flutter/cupertino.dart';
-
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 import '/models/todoItem.dart';
-
-import '../providers/todo.dart';
 
 class TodoListItem extends StatelessWidget {
   final TodoItem todo;
@@ -15,7 +11,14 @@ class TodoListItem extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(10),
       child: Row(
-        children: [Text(todo.title)],
+        children: [
+          Text(todo.title),
+          IconButton(
+            icon: const Icon(Icons.delete),
+            tooltip: 'Delete',
+            onPressed: () {},
+          ),
+        ],
       ),
     );
   }
