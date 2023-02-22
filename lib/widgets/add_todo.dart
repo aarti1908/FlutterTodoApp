@@ -55,7 +55,7 @@ class _AddTodoScreenState extends State<AddTodo> {
             ),
             Container(
               margin: const EdgeInsets.all(10.0),
-              child: OutlinedButton(
+              child: ElevatedButton(
                 onPressed: _addTodo,
                 child: const Text('Add'),
               ),

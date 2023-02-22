@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:flutter_todo_app/screens/app.dart';
@@ -25,11 +26,22 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Flutter Demo',
         theme: ThemeData(
-          // UI
-          brightness: Brightness.dark,
-          primaryColor: Colors.lightBlue[800],
-          fontFamily: 'Georgia',
-          //text style
+          primarySwatch: Colors.amber,
+          scaffoldBackgroundColor: Colors.amber,
+          textSelectionTheme: TextSelectionThemeData(
+            cursorColor: Colors.red,
+            selectionColor: Colors.red,
+            selectionHandleColor: Colors.red,
+          ),
+          listTileTheme: const ListTileThemeData(
+            iconColor: Colors.red,
+          ),
+          brightness: Brightness.light,
+          textTheme: const TextTheme(
+            displayLarge: TextStyle(color: Colors.deepPurpleAccent),
+            displayMedium: TextStyle(color: Colors.deepPurpleAccent),
+            displaySmall: TextStyle(color: Colors.deepPurpleAccent),
+          ),
         ),
         home: const App(),
         routes: {

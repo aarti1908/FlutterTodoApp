@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_todo_app/widgets/timer.dart';
 import '/widgets/todo_list.dart';
-import '../widgets/addTodo.dart';
+import '../widgets/add_todo.dart';
 
 class Dashboard extends StatelessWidget {
   const Dashboard({super.key});

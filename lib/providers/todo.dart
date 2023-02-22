@@ -49,4 +49,18 @@ class Todo with ChangeNotifier {
     _todos = loadedTodos.reversed.toList();
     notifyListeners();
   }
+
+  Future<void> deleteTodo(String id) async {
+    print(id);
+    EasyLoading.showProgress(0.3, status: 'deleting...');
+    final url =
+        Uri.https('todo-2ad79-default-rtdb.firebaseio.com', '/todos/$id.json');
+    try {
+      final response = await http
+          .delete(url)
+          .then((value) => EasyLoading.showSuccess('Great Success!'));
+    } catch (error) {
+      print(error);
+    }
+  }
 }
